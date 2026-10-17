@@ -228,6 +228,10 @@ export default function Stellar() {
           property="og:description"
           content="Low-cost, sub-second, ed25519 stealth payments on Stellar with Soroban smart contracts."
         />
+        <link rel="canonical" href={seo.canonical} />
+        {seo.alternates.map((alt) => (
+          <link key={alt.hrefLang} rel="alternate" hrefLang={alt.hrefLang} href={alt.href} />
+        ))}
         <meta property="og:image" content="https://usewraith.xyz/og/stellar.png" />
         <meta property="og:url" content={seo.canonical} />
         <meta property="og:type" content="website" />
@@ -280,7 +284,7 @@ export default function Stellar() {
                   Try Stellar Demo
                 </a>
                 <a
-                  href="https://docs.usewraith.xyz/chains/stellar"
+                  href="https://docs.usewraith.xyz/sdk/chains/stellar"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => track('cta_click', { source: 'stellar-docs' })}
@@ -288,15 +292,13 @@ export default function Stellar() {
                 >
                   Read Stellar docs
                 </a>
-                <a
-                  href="https://spectre.usewraith.xyz"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/roadmap#phase-2"
                   onClick={() => track('cta_click', { source: 'stellar-spectre' })}
                   className="flex h-12 items-center justify-center border border-outline-variant px-7 font-heading text-[13px] font-semibold uppercase tracking-[1.5px] text-primary transition-colors duration-150 hover:bg-surface-bright"
                 >
                   Spectre on Stellar
-                </a>
+                </Link>
               </div>
 
               {/* Value prop stats — matches Hero.tsx stat block */}
@@ -608,7 +610,7 @@ export default function Stellar() {
               Try Stellar Demo
             </a>
             <a
-              href="https://docs.usewraith.xyz/chains/stellar"
+              href="https://docs.usewraith.xyz/sdk/chains/stellar"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => track('cta_click', { source: 'stellar-docs' })}
@@ -616,15 +618,13 @@ export default function Stellar() {
             >
               Read Stellar docs
             </a>
-            <a
-              href="https://spectre.usewraith.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/roadmap#phase-2"
               onClick={() => track('cta_click', { source: 'stellar-spectre' })}
               className="flex h-12 items-center justify-center border border-outline-variant px-7 font-heading text-[13px] font-semibold uppercase tracking-[1.5px] text-primary transition-colors duration-150 hover:bg-surface-bright"
             >
               Spectre on Stellar
-            </a>
+            </Link>
             <Link
               to="/"
               className="flex h-12 items-center justify-center border border-outline-variant px-7 font-heading text-[13px] font-semibold uppercase tracking-[1.5px] text-primary transition-colors duration-150 hover:bg-surface-bright"
